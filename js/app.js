@@ -12,6 +12,9 @@ App.Slide = Ember.Object.extend({
   id: null,
   init: function() {
     App.Slides.pushObject(this)
+  },
+  nextSlide: function() {
+    return App.Slides.findProperty('id', (this.get('id') + 1))
   }
 });
 
@@ -26,7 +29,12 @@ App.Slide.create({
   title: "Now it's SERIOUS"
 });
 
-
+App.SlidesController = Ember.ObjectController.extend({
+  next: function(e,c) {
+    var router = this.target.get('router');
+    router.transitionTo("slides", this.content.nextSlide());
+  }
+})
 App.SlidesRoute = Ember.Route.extend({
   model: function(params) {
     return App.Slides.findProperty('id', parseInt(params.slide_id))

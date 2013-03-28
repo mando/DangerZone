@@ -16,16 +16,18 @@
   </script>
 
   <script type="text/x-handlebars" id="slides">
-    <div class='title'>
-      <h1>{{title}}</h1>
-    </div>
-    <div class="body">
-      <ul>
-      {{#each item in bullets}}
-        <li>{{item}}</li>
-      {{/each}}
-      </ul>
-    </div>
+    <span {{action next}}>
+      <div class='title'>
+        <h1>{{title}}</h1>
+      </div>
+      <div class="body">
+        <ul>
+        {{#each item in bullets}}
+          <li>{{item}}</li>
+        {{/each}}
+        </ul>
+      </div>
+    </span>
   </script>
   <script src="js/libs/jquery-1.9.1.js"></script>
   <script src="js/libs/handlebars-1.0.0-rc.3.js"></script>
