@@ -11,7 +11,8 @@ App.Slide = Ember.Object.extend({
 });
 
 var slide_1 = App.Slide.create({
-  title: "Getting started with Ember"
+  title: "Getting started with Ember",
+  bullets: ['Mando Escamilla', 'github.com/mando']
 });
 
 App.SlidesRoute = Ember.Route.extend({

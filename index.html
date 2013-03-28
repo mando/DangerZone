@@ -21,9 +21,9 @@
     </div>
     <div class="body">
       <ul>
-        <li>BULLET 1</li>
-        <li>BULLET 2</li>
-        <li>BULLET 3</li>
+      {{#each item in bullets}}
+        <li>{{item}}</li>
+      {{/each}}
       </ul>
     </div>
   </script>
