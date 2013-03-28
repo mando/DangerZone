@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Danger Zone</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/slide.css">
+</head>
+<body>
+
+  <script type="text/x-handlebars">
+    <div class="slide">
+      {{outlet}}
+    </div>
+  </script>
+
+  <script type="text/x-handlebars" id="slides">
+    <span {{action next}}>
+      <div class='title'>
+        <h1>{{title}}</h1>
+      </div>
+      <div class="body">
+        <ul>
+        {{#each item in bullets}}
+          <li>{{item}}</li>
+        {{/each}}
+        </ul>
+      </div>
+    </span>
+  </script>
+  <script src="js/libs/jquery-1.9.1.js"></script>
+  <script src="js/libs/handlebars-1.0.0-rc.3.js"></script>
+  <script src="js/libs/ember-1.0.0-rc.1.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
